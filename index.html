@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+</head>
+<style>
+.cssFinal{color:red;
+        
+        font-size: 42px;
+}
+
+.cssDisplay{
+        color:orange;
+        font-family:Times New 'Times New Roman', Times, serif;
+        font-size: 40px;
+}
+body{background-image: url(stuart.JPG);background-size: cover;
+        background-repeat: no-repeat;
+       
+}
+        button{color:white;
+                background-color: rgba(97, 129, 56, 0.8);
+                border:none;
+                border-radius: 4px;
+                width:25px;
+                height:25px;
+        }
+        p{display:flex;
+                align-items: center;
+                justify-content: space-around
+        }
+</style>
+
+<body>
+
+    <p>
+      <button onclick="
+        updateCalculation('1');
+      ">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      ">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      ">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+      ">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+      ">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+      ">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+      ">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+      ">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+      ">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+      ">8</button>
+
+      <button onclick="
+      myitem();
+        updateCalculation('9');
+      ">9</button>
+
+      <button onclick="
+      myitem();
+        updateCalculation(' * ');
+      ">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+      myitem();
+        updateCalculation('0');
+      ">0</button>
+
+      <button onclick="
+      myitem();
+        updateCalculation('.');
+      ">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        final.innerHTML = calculation;
+      ">=</button>
+
+      <button onclick="
+      myitem();
+        updateCalculation(' / ');
+      ">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+      
+        calculation = '';
+        result.innerHTML=''
+        final.innerHTML='';
+      ">Clear</button>
+    </p>
+    
+    <p class="resultDisplay cssDisplay"></p>
+<p class="final cssFinal"></p>
+    <script>
+      let calculation = '';
+
+      function updateCalculation(value) {
+       let result = document.querySelector('.resultDisplay') 
+              
+       localStorage.setItem('valuent','calculation')
+        calculation += value;
+        result.innerHTML = calculation;
+      }
+      let result = document.querySelector('.resultDisplay');
+      
+      let final = document.querySelector('.final')
+      function myitem(){
+              localStorage.getItem('valuent')
+      }
+    </script>
+  </body>
+</html>
